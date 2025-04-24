@@ -2,13 +2,13 @@
 	"name": "SQL script 1",
 	"properties": {
 		"content": {
-			"query": "SELECT \n  state,\n  SUM(cases) AS total_cases,\n  SUM(deaths) AS total_deaths\nFROM covid_cases\nGROUP BY state\nORDER BY total_cases DESC;\n",
+			"query": "SELECT \n  state,\n  SUM(cases) AS total_cases,\n  SUM(deaths) AS total_deaths\nFROM covid_cases_de\nGROUP BY state\nORDER BY total_cases DESC;\n",
 			"metadata": {
 				"language": "sql"
 			},
 			"currentConnection": {
-				"databaseName": "master",
-				"poolName": "Built-in"
+				"databaseName": "Covid19",
+				"poolName": "Covid19"
 			},
 			"resultLimit": 5000
 		},
