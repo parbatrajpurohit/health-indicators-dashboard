@@ -13,7 +13,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "covid19csv//demographics_de.csv"
+					},
+					{
+						"name": "Destination",
+						"value": "public.demographics_de"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
@@ -30,7 +39,7 @@
 						"type": "AzurePostgreSqlSink",
 						"writeBatchSize": 1000000,
 						"writeBatchTimeout": "00:30:00",
-						"writeMethod": "CopyCommand"
+						"writeMethod": "BulkInsert"
 					},
 					"enableStaging": false,
 					"translator": {

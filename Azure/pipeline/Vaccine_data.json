@@ -13,7 +13,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "covid19csv//covid_de_vaccines.csv"
+					},
+					{
+						"name": "Destination",
+						"value": "public.covid_vaccines_de"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
@@ -27,15 +36,10 @@
 						}
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
+						"type": "AzurePostgreSqlSink",
+						"writeBatchSize": 1000000,
+						"writeBatchTimeout": "00:30:00",
+						"writeMethod": "CopyCommand"
 					},
 					"enableStaging": false,
 					"translator": {
@@ -49,8 +53,8 @@
 								},
 								"sink": {
 									"name": "date",
-									"type": "String",
-									"physicalType": "String"
+									"type": "DateTime",
+									"physicalType": "date"
 								}
 							},
 							{
@@ -61,8 +65,8 @@
 								},
 								"sink": {
 									"name": "doses",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "integer"
 								}
 							},
 							{
@@ -73,8 +77,8 @@
 								},
 								"sink": {
 									"name": "doses_first",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "integer"
 								}
 							},
 							{
@@ -85,8 +89,8 @@
 								},
 								"sink": {
 									"name": "doses_second",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "integer"
 								}
 							},
 							{
@@ -97,8 +101,8 @@
 								},
 								"sink": {
 									"name": "pfizer_cumul",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "integer"
 								}
 							},
 							{
@@ -109,8 +113,8 @@
 								},
 								"sink": {
 									"name": "moderna_cumul",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "integer"
 								}
 							},
 							{
@@ -121,8 +125,8 @@
 								},
 								"sink": {
 									"name": "astrazeneca_cumul",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "integer"
 								}
 							},
 							{
@@ -133,8 +137,8 @@
 								},
 								"sink": {
 									"name": "persons_first_cumul",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "integer"
 								}
 							},
 							{
@@ -145,8 +149,8 @@
 								},
 								"sink": {
 									"name": "persons_full_cumul",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "integer"
 								}
 							}
 						],
@@ -165,7 +169,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Covid_vacines",
+						"referenceName": "Vacines",
 						"type": "DatasetReference"
 					}
 				]
