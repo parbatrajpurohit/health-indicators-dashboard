@@ -1,0 +1,9 @@
+{
+	"name": "Covid19-25",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b92fd464-636b-418d-834b-2df5de881882",
+		"tenantId": "cf9df4a2-5ada-4752-a463-7d778a7d5f1c"
+	}
+}
