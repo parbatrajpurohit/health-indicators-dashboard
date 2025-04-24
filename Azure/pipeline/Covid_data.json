@@ -59,12 +59,12 @@
 							},
 							{
 								"source": {
-									"name": "gender",
+									"name": "county",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "gender",
+									"name": "county",
 									"type": "String",
 									"physicalType": "character varying"
 								}
@@ -83,12 +83,60 @@
 							},
 							{
 								"source": {
-									"name": "population",
+									"name": "gender",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "population",
+									"name": "gender",
+									"type": "String",
+									"physicalType": "character varying"
+								}
+							},
+							{
+								"source": {
+									"name": "date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "cases",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cases",
+									"type": "Int32",
+									"physicalType": "integer"
+								}
+							},
+							{
+								"source": {
+									"name": "deaths",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "deaths",
+									"type": "Int32",
+									"physicalType": "integer"
+								}
+							},
+							{
+								"source": {
+									"name": "recovered",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "recovered",
 									"type": "Int32",
 									"physicalType": "integer"
 								}
@@ -103,13 +151,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "demographics_de",
+						"referenceName": "Coviddata",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Demographic",
+						"referenceName": "Covid_data",
 						"type": "DatasetReference"
 					}
 				]
