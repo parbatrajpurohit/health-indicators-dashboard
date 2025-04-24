@@ -1,5 +1,5 @@
 {
-	"name": "AzurePostgreSqlTable1",
+	"name": "Demographic",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "sink",

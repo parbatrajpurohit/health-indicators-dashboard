@@ -1,5 +1,5 @@
 {
-	"name": "Copy_Coviddata_to_Postgres",
+	"name": "pipeline1",
 	"properties": {
 		"activities": [
 			{
@@ -49,13 +49,8 @@
 								}
 							},
 							{
-								"source": {
-									"name": "gender",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
-									"name": "gender",
+									"name": "county",
 									"type": "String",
 									"physicalType": "character varying"
 								}
@@ -74,12 +69,40 @@
 							},
 							{
 								"source": {
-									"name": "population",
+									"name": "gender",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "population",
+									"name": "gender",
+									"type": "String",
+									"physicalType": "character varying"
+								}
+							},
+							{
+								"sink": {
+									"name": "date",
+									"type": "DateTime",
+									"physicalType": "date"
+								}
+							},
+							{
+								"sink": {
+									"name": "cases",
+									"type": "Int32",
+									"physicalType": "integer"
+								}
+							},
+							{
+								"sink": {
+									"name": "deaths",
+									"type": "Int32",
+									"physicalType": "integer"
+								}
+							},
+							{
+								"sink": {
+									"name": "recovered",
 									"type": "Int32",
 									"physicalType": "integer"
 								}
@@ -94,13 +117,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Coviddata",
+						"referenceName": "demographics_de",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Demographic",
+						"referenceName": "Sink_for_tables",
 						"type": "DatasetReference"
 					}
 				]

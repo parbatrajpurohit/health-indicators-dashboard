@@ -160,7 +160,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "table2",
+						"referenceName": "Vacines",
 						"type": "DatasetReference"
 					}
 				]
