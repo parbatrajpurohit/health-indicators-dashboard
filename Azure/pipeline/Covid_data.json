@@ -103,7 +103,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Coviddata",
+						"referenceName": "demographics_de",
 						"type": "DatasetReference"
 					}
 				],
