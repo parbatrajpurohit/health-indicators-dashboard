@@ -1,0 +1,60 @@
+{
+	"name": "Covid_vacines",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "covid_de_vaccines.csv",
+				"container": "covid19csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "date",
+				"type": "String"
+			},
+			{
+				"name": "doses",
+				"type": "String"
+			},
+			{
+				"name": "doses_first",
+				"type": "String"
+			},
+			{
+				"name": "doses_second",
+				"type": "String"
+			},
+			{
+				"name": "pfizer_cumul",
+				"type": "String"
+			},
+			{
+				"name": "moderna_cumul",
+				"type": "String"
+			},
+			{
+				"name": "astrazeneca_cumul",
+				"type": "String"
+			},
+			{
+				"name": "persons_first_cumul",
+				"type": "String"
+			},
+			{
+				"name": "persons_full_cumul",
+				"type": "String"
+			}
+		]
+	}
+}
