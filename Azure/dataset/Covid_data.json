@@ -1,5 +1,5 @@
 {
-	"name": "Sink_for_tables",
+	"name": "Covid_data",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "sink",
